@@ -135,9 +135,12 @@
             <!-- CONTACTS LIST -->
             <div class="my-1">
               <ul>
+                <!--  id="active-contact" -->
                 <li
-                  id="active-contact"
                   class="px-3 py-2 d-flex justify-content-between"
+                  v-for="contact
+                        in
+                        contacts"
                 >
                   <!-- contact info -->
                   <div class="d-flex align-items-center">
@@ -147,239 +150,15 @@
                       aria-current="page"
                       href="#"
                       ><img
-                        src="./img/avatar_io.jpg"
+                        :src="'./img/avatar'+ contact.avatar+'.jpg'"
                         alt=""
                     /></a>
                     <div class="d-flex flex-column">
                       <!-- nome contatto -->
-                      <span>Nome</span>
+                      <span>{{contact.name}}</span>
 
                       <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
-                    </div>
-                  </div>
-                  <!-- orario -->
-                  <div>
-                    <span>12:00</span>
-                  </div>
-                </li>
-                <li
-                  id=""
-                  class="px-3 py-2 d-flex justify-content-between"
-                >
-                  <!-- contact info -->
-                  <div class="d-flex align-items-center">
-                    <!-- foto contatto -->
-                    <a
-                      class="nav-link pe-3"
-                      aria-current="page"
-                      href="#"
-                      ><img
-                        src="./img/avatar_io.jpg"
-                        alt=""
-                    /></a>
-                    <div class="d-flex flex-column">
-                      <!-- nome contatto -->
-                      <span>Nome</span>
-
-                      <!-- status messaggio -->
-                      <span>status messaggio</span>
+                      <span>Ultimo messaggio inviato</span>
                     </div>
                   </div>
                   <!-- orario -->
