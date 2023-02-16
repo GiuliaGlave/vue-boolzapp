@@ -82,7 +82,7 @@ li {
   border-top: solid thin #e9ebeb;
 }
 
-#active-contact {
+.active {
   background-color: #e9ebeb;
 }
 
@@ -96,9 +96,13 @@ li {
 /* messaggi */
 .sent-msg {
   background-color: #d5f9ba;
+  max-width: 80%;
+  align-self: flex-end;
 }
 .received-msg {
   background-color: white;
+  max-width: 80%;
+  align-self: flex-start;
 }
 .msg-time {
   font-size: 0.6rem;

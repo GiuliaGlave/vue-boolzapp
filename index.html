@@ -138,9 +138,13 @@
                 <!--  id="active-contact" -->
                 <li
                   class="px-3 py-2 d-flex justify-content-between"
-                  v-for="contact
+                  v-for="(contact, contactIndex)
                         in
                         contacts"
+                  @click="clickContact(contactIndex)"
+                  :class="{
+                    'active': contactIndex == activeContact
+                  }"
                 >
                   <!-- contact info -->
                   <div class="d-flex align-items-center">
@@ -158,7 +162,10 @@
                       <span>{{contact.name}}</span>
 
                       <!-- status messaggio -->
-                      <span>Ultimo messaggio inviato</span>
+                      <span
+                        >{{contact.messages[contact.messages.length
+                        -1].message}}</span
+                      >
                     </div>
                   </div>
                   <!-- orario -->
@@ -174,6 +181,9 @@
 
           <section
             class="private-chat p-0 col col-8 d-flex flex-column justify-content-between"
+            v-for="(contact, contactIndex)
+                        in
+                        contacts"
           >
             <!-- NAVBAR CHAT -->
             <nav
@@ -187,13 +197,15 @@
                   aria-current="page"
                   href="#"
                   ><img
-                    src="./img/avatar_io.jpg"
+                    :src="'./img/avatar'+ contacts[activeContact].avatar+'.jpg'"
                     alt=""
                 /></a>
                 <div class="d-flex flex-column">
-                  <span>Nome</span>
+                  <span>{{contacts[activeContact].name}}</span>
                   <!-- ultimo accesso -->
-                  <span id="last-log">ultimo accesso 12:00</span>
+                  <span id="last-log"
+                    >{{contact.messages[contact.messages.length -1].date}}</span
+                  >
                 </div>
               </div>
 
@@ -221,19 +233,27 @@
               class="h-100 mx-5 my-2 d-flex flex-column justify-content-end"
             >
               <!--messaggio inviato-->
-              <div class="row justify-content-end">
-                <div class="sent-msg col col-5 rounded d-flex flex-column">
-                  <div class="msg p-2">prova messaggio inviato</div>
-                  <div class="msg-time text-end pb-1">12:00</div>
+              <div class="d-flex flex-column align-items-end">
+                <div
+                  class="rounded d-flex flex-column mb-2"
+                  :class="{
+                      'sent-msg':message.status=='sent',
+                      'received-msg':message.status=='received',
+                    }"
+                  v-for="message in contacts[activeContact].messages"
+                >
+                  <!-- per ogni messaggio tra i contacts del activeContact -->
+                  <p class="msg p-2">{{message.message}}</p>
+                  <div class="msg-time text-end p-1">{{message.date}}</div>
                 </div>
               </div>
               <!--messaggio ricevuto-->
-              <div class="row">
+              <!-- <div class="row">
                 <div class="received-msg col col-5 rounded">
                   <div class="msg p-2">prova messaggio ricevuto</div>
                   <div class="msg-time text-end pb-1">12:00</div>
                 </div>
-              </div>
+              </div> -->
             </main>
             <!-- BARRA TESTO -->
             <footer>
