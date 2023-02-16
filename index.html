@@ -237,23 +237,17 @@
                 <div
                   class="rounded d-flex flex-column mb-2"
                   :class="{
-                      'sent-msg':message.status=='sent',
-                      'received-msg':message.status=='received',
+                      'sent-msg': message.status =='sent',
+                      'received-msg':message.status == 'received',
                     }"
                   v-for="message in contacts[activeContact].messages"
                 >
-                  <!-- per ogni messaggio tra i contacts del activeContact -->
-                  <p class="msg p-2">{{message.message}}</p>
+                  <p class="msg p-2">
+                    {{message.message}}<!-- per ogni messaggio tra i contacts del activeContact -->
+                  </p>
                   <div class="msg-time text-end p-1">{{message.date}}</div>
                 </div>
               </div>
-              <!--messaggio ricevuto-->
-              <!-- <div class="row">
-                <div class="received-msg col col-5 rounded">
-                  <div class="msg p-2">prova messaggio ricevuto</div>
-                  <div class="msg-time text-end pb-1">12:00</div>
-                </div>
-              </div> -->
             </main>
             <!-- BARRA TESTO -->
             <footer>
@@ -270,6 +264,8 @@
                 <!-- digita messaggio -->
                 <div class="col">
                   <input
+                    @keyUp.enter="sendMessage()"
+                    v-model="newMessage.message"
                     class="placeholder-text form-control border-0"
                     type="text"
                     placeholder="Scrivi un messaggio"

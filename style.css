@@ -14,6 +14,7 @@ body {
 
 .private-chat {
   background-image: url(./img/mine.jpg);
+  overflow: auto;
 }
 
 img {
@@ -70,7 +71,6 @@ ul {
   list-style: none;
   padding-left: 0;
   height: 25rem;
-  overflow: auto;
 }
 
 ul span:last-child {
@@ -94,6 +94,7 @@ li {
   line-height: 50%;
 }
 /* messaggi */
+
 .sent-msg {
   background-color: #d5f9ba;
   max-width: 80%;
